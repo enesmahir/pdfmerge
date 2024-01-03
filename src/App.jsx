@@ -47,7 +47,7 @@ const App = () => {
           </div>
 
           {pdfFiles.length === 0 ? (
-            <h1 className="text-center">Dosya Giriniz</h1>
+            <h1 className="text-center">Add Pdf</h1>
           ) : (
             <button className="mb-3 btn btn-success" onClick={handleMerge}>
               Merge PDFs
@@ -69,7 +69,7 @@ const App = () => {
               className="btn btn-danger d-flex justify-content-center align-items-center"
               onClick={handleClose}
             >
-              Kapat
+              Close
             </button>
           </div>
         </>
