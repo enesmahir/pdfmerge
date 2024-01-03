@@ -1,0 +1,74 @@
+/* App.css */
+
+/* Genel stil */
+body {
+  background-color: #333; /* Koyu arka plan rengi */
+  color: #fff; /* Beyaz metin rengi */
+}
+
+.container {
+  background-color: #444; /* Koyu içerik arka plan rengi */
+  border: 1px solid #555; /* Sınır rengi */
+}
+
+.form-control {
+  background-color: #555; /* Koyu form arka plan rengi */
+  color: #fff; /* Beyaz form metin rengi */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  background-color: #666; /* Odaklandığında daha koyu form arka plan rengi */
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Hafif gölge efekti */
+}
+
+/* İframe stilleri */
+iframe {
+  background-color: #333; /* Koyu iframe arka plan rengi */
+  border: 1px solid #555; /* İframe sınır rengi */
+}
+
+/* H1 başlık stilleri */
+h1 {
+  color: #fff; /* Beyaz h1 metin rengi */
+}
+
+/* Normal durumda buton rengi */
+.btn {
+  background-color: #4caf50; /* Yeşil */
+  color: white;
+  border: 1px solid #4caf50;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover durumunda dönen animasyon */
+.btn:hover {
+  background-color: #45a049; /* Daha koyu yeşil */
+  transform: rotate(360deg); /* 360 derece dönme efekti */
+}
+
+/* Active durumunda gölge efekti */
+.btn:active {
+  background-color: #3e8e41; /* Daha da koyu yeşil */
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Hafif gölge efekti */
+}
+
+/* Kapat butonu için renkler */
+.btn-danger {
+  background-color: #d9534f; /* Kırmızı */
+  color: white;
+  border: 1px solid #d9534f;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover durumunda büyüme animasyonu */
+.btn-danger:hover {
+  background-color: #c9302c; /* Daha koyu kırmızı */
+  transform: scale(1.1); /* Hover durumunda büyütme efekti */
+}
+
+/* Active durumunda gölge efekti */
+.btn-danger:active {
+  background-color: #ac2925; /* Daha da koyu kırmızı */
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Hafif gölge efekti */
+}
