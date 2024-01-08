@@ -28,9 +28,6 @@ const App = () => {
     setPage(true);
     setPdfFiles([]);
   };
-  const handleOpenTranslate = () => {
-    window.takeData.ipcRenderer.send("translate-open");
-  };
 
   return (
     <>
