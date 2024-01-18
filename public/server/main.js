@@ -1,27 +1,35 @@
 const { app, BrowserWindow, globalShortcut } = require("electron");
-const path = require("node:path");
-
+const path = require("path");
 const isDev = require("electron-is-dev");
 
 const createWindow = () => {
-  // Create the browser window.
   const mainWin = new BrowserWindow({
     width: 1200,
     height: 800,
     maximizable: true,
-    icon: `${__dirname}/public/icon.ico`,
+    icon: path.join(__dirname, "public", "icon.ico"),
     autoHideMenuBar: true,
     webPreferences: {
-      devTools: false,
+      devTools: isDev,
     },
-    icon: __dirname + "./icon.png",
   });
+
   mainWin.loadURL(
     isDev
       ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../../build/index.html")}`
+      : "file://" + path.join(__dirname, "../../build", "index.html")
   );
-  mainWin.webContents.openDevTools(false);
+
+  mainWin.webContents.on("dom-ready", () => {
+    mainWin.webContents.executeJavaScript(`
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Alt') {
+          e.preventDefault();
+        }
+      });
+    `);
+  });
+
   mainWin.on("close", () => {
     app.quit();
   });
